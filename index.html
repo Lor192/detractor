@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DETRACTOR</title>
+    <meta
+      name="description"
+      content="DETRACTOR: la slot machine ispirata alle recensioni negative dell'Apple Store."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="poster-screen" aria-label="Poster interattivo di DETRACTOR">
+        <div class="poster-stage">
+          <img
+            class="poster-image"
+            src="./cover.png"
+            alt="Poster di DETRACTOR con slot machine e fumetti"
+          />
+          <div class="poster-vignette"></div>
+
+          <div class="slot-overlay" id="slotOverlay" aria-live="polite" aria-label="Rulli della slot">
+            <div class="reel-window">
+              <span class="symbol" id="reel0">🤬</span>
+            </div>
+            <div class="reel-window">
+              <span class="symbol" id="reel1">👎</span>
+            </div>
+            <div class="reel-window">
+              <span class="symbol" id="reel2">⌛️</span>
+            </div>
+          </div>
+
+          <div class="floating-status" id="statusText">
+            Tira la leva e lascia parlare il rancore.
+          </div>
+
+          <button class="start-button" id="startButton">
+            Tira la leva e tenta la fortuna
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div
+      class="modal-backdrop hidden"
+      id="resultModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-card">
+        <h3 id="modalTitle">Il cliente furioso è...</h3>
+        <div class="result-symbols" id="resultSymbols" aria-hidden="true"></div>
+        <div class="review-card">
+          <p class="review-author" id="reviewAuthor"></p>
+          <p class="review-rating" id="reviewRating"></p>
+          <p class="review-text" id="reviewText"></p>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-button" id="playAgainButton">Vuoi giocare ancora?</button>
+          <button class="modal-button modal-button--secondary" id="backToMenuButton">Torna al menù</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
